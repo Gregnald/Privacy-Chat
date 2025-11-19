@@ -1,0 +1,44 @@
+/* Minimal global CSS. The project uses Tailwind utility classes in components.
+   We load Tailwind via the Play CDN in index.html, so this file just provides
+   a font import and a few small defaults so the UI looks correct even before
+   PostCSS/Tailwind is configured locally. */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+:root {
+  --bg: #f8fafc;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* small helper for the app container when Tailwind isn't present */
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.rounded-3xl {
+  border-radius: 1rem;
+}
+
+.shadow-2xl {
+  box-shadow: 0 20px 40px rgba(2,6,23,0.2);
+}
+
+.rounded-xl { border-radius: 0.75rem; }
+.rounded-2xl { border-radius: 1rem; }
+.rounded-bl-sm { border-bottom-left-radius: 0.375rem; }
+.rounded-br-sm { border-bottom-right-radius: 0.375rem; }
+
+/* basic disabled style */
+.disabled\:opacity-50:disabled { opacity: 0.5; }
+.disabled\:cursor-not-allowed:disabled { cursor: not-allowed; }
